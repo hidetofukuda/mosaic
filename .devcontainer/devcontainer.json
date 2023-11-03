@@ -1,0 +1,32 @@
+{
+    "name": "${localWorkspaceFolderBasename}",
+    "dockerComposeFile": "compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "remoteUser": "dev-user",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "workbench.iconTheme": "material-icon-theme",
+                "editor.renderWhitespace": "all",
+                "editor.guides.bracketPairs": true,
+                "editor.fontFamily": "'BIZ UBゴシック'",
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+            },
+            // devcontainerに自動でインストールするvscode extention
+            // extentionのページの歯車アイコンをクリックすると出てくる「拡張機能 ID のコピー」というやつからここに貼るIDを知ることができる
+            "extensions": [
+				"golang.Go",
+				"ms-azuretools.vscode-docker",
+				"shardulm94.trailing-spaces",
+				"eamodio.gitlens",
+				"donjayamanne.githistory",
+				"mhutchie.git-graph",
+				"streetsidesoftware.code-spell-checker",
+				"ICS.japanese-proofreading",
+				"amazonwebservices.aws-toolkit-vscode"
+			]
+        }
+    }
+}
