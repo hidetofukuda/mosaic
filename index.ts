@@ -29,7 +29,7 @@ class SplitMovieToImage{
 
     split(){
         ffmpeg(materialMoviePath)
-        .outputOptions(['-vf', 'fps=1'])  // 1秒ごとにフレームを抽出
+        .outputOptions(['-vf', 'fps=5'])  // 1秒ごとにフレームを抽出
         .on('end', () => {
           console.log('画像の抽出が完了しました。');
         })
