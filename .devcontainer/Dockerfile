@@ -1,10 +1,17 @@
 
-ARG VARIANT=16-bullseye
+ARG VARIANT=18-bullseye
 FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:${VARIANT}
 
-# 開発用ユーザー
-RUN useradd -m -d /home/dev-user -s /bin/bash -p dev-user dev-user
+ARG USERNAME
+
+RUN apt-get update \
+   && export DEBIAN_FRONTEND=noninteractive \
+   && groupadd $USERNAME \
+   && useradd -d /home/$USERNAME -s /bin/bash -g $USERNAME $USERNAME \
+   && mkdir -m 777 /workspaces \
+   && apt-get clean \
+   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspaces
 
-RUN npm install typescript
+RUN npm install

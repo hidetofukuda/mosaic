@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "index": "./node_modules/.bin/ts-node index.ts",
+    "tsc": "tsc index.ts"
+  },
   "dependencies": {
     "@types/node": "^20.8.10",
     "child_process": "^1.0.2",
@@ -6,6 +10,8 @@
     "mosaic-node-generator": "^1.1.5"
   },
   "devDependencies": {
-    "generator": "^1.0.1"
+    "@types/fluent-ffmpeg": "^2.1.23",
+    "generator": "^1.0.1",
+    "ts-node": "^10.9.1"
   }
 }

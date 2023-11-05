@@ -4,8 +4,13 @@ services:
     build: 
       context: ..
       dockerfile: .devcontainer/Dockerfile
+      args:
+        - USERNAME=${USER}
     command: sleep infinity
     container_name: app
     tty: true
     volumes:
-      - ../..:/workspaces
+      - vscode-extension-volume:/root/.vscode-server/extensions
+      - ../..:/workspaces:delegated
+volumes:
+  vscode-extension-volume: {}
